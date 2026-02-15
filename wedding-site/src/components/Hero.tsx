@@ -74,12 +74,24 @@ const Hero = ({ lang }: { lang: Lang }) => {
           ].map((item) => (
             <div
               key={item.label}
-              className="bg-white/40 backdrop-blur-sm rounded-lg p-4 shadow-md border border-white/30"
+              className="bg-white/40 backdrop-blur-sm rounded-lg p-4 shadow-md border border-white/30 flex flex-col items-center justify-center min-w-0"
             >
               <div className="text-2xl md:text-3xl font-semibold">
                 {item.value < 10 ? `0${item.value}` : item.value}
               </div>
-              <div className="text-xs uppercase tracking-widest mt-1 opacity-70">
+
+              <div
+                className="
+      mt-1
+      text-[clamp(0.55rem,1.2vw,0.75rem)]
+      uppercase
+      tracking-[0.15em]
+      opacity-70
+      whitespace-nowrap
+      overflow-hidden
+      text-ellipsis
+    "
+              >
                 {item.label}
               </div>
             </div>
